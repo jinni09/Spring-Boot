@@ -6,6 +6,7 @@
 * JDK 1.8.0
 * thymeleaf(boot 내장 Tomcat) / jstl(Tomcat 8.0)
 * framework: Springframework-boot 2.2.2.RELEASE
+* Bootstrap 4.4.1
 - - -
 #### (Spring Starter Project) 
 ### Spring-Boot
