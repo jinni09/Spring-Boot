@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+	<title>Spring-boot-thymeleaf</title>
+	<link rel="stylesheet" type="text/css" media="all" th:href="@{/css/bootstrap.css}" href="/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" media="all" th:href="@{/css/cover.css}" href="/css/cover.css">
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script type="text/javascript" th:src="@{/js/bootstrap.js}" src="/js/bootstrap.js"></script>
+	<script type="text/javascript">
+	var path = $(location).attr('pathname');
+	var urlSplit = path.split("/");
+	var menu = urlSplit[1].trim();
+	$(function() {
+		$(".nav-masthead").find("a").removeClass("active");
+		if(menu == '') {
+			$('#home').addClass("active");
+		} else if(menu == 'thymeleaf') {
+			$('#thymeleaf').addClass("active");
+		} else if(menu == 'oracle') {
+			$('#oracle').addClass("active");
+		}
+	});
+	</script>
+</head>
+<body class="text-center">
+	
+	<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+		<div th:replace="layout/header :: header"></div>
+	    <div layout:fragment="content"></div>
+	    <div th:replace="layout/footer :: footer"></div>
+	</div>
+	
+</body>
+</html>
